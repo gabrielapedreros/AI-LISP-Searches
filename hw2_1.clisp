@@ -1,0 +1,16 @@
+;Gabriela Pedreros
+;gp21j
+;dfs function
+
+;single lisp function that performs a depth first search of a tree
+
+(defun dfs (tree)       ;input is the list representation of the tree
+  (if (null tree) nil   ;if input is an empty list, return nil
+      (if (atom (car tree))   ;if the first element is a leaf, 
+          (cons (car tree) (dfs (cdr tree)))   ;construct a list with the first node and the rest of the list
+          (append (dfs (car tree)) (dfs (cdr tree)))    ;return single, top-level list of nodes left-to-right depth first search
+      )
+  )
+)
+
+

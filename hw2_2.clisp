@@ -1,0 +1,24 @@
+;Gabriela Pedreros
+;gp21j
+;dfid functions
+
+;depth first iterative deepening
+
+(defun dfs (tree max-depth)  ;arguments taken in: list representation of tree and an max depth of tree
+    (cond 
+      ((null tree) nil)           ;if input is an empty list, return nil
+      ((atom tree) (list tree))   ;if the first element is a leaf, make a list with that leaf element 
+      ((> max-depth 0)                ;if depth is positve int
+      (append (dfs (car tree) (- max-depth 1))    ;recursively find the leaf in each level
+      (dfs (cdr tree) max-depth)))        ;recursively find the rest of the list
+    )
+)  
+
+(defun dfid (tree max-depth) 
+  (if (< max-depth 0) nil         ;depth cannot be less than 0 
+      (append (dfid tree (- max-depth 1)) 
+        (dfs tree max-depth)) ;at a certain level call dfs to search
+  )
+)
+;single top level list of terminal nodes left-to-right depth-first iterative-deeping search
+

@@ -1,0 +1,15 @@
+;Gabriela Pedreros
+;gp21j
+;bfs function
+
+;breadth first search of a tree
+
+(defun bfs (tree)   ;argument: list representation of the tree
+  (cond 
+    ((null tree) nil)     ;if input is an empty list, return nil 
+    ((atom (car tree))    ;if the first element is a leaf,
+      (cons (car tree) (bfs (cdr tree))))     ;construct a list with the first node and the rest of the list
+    (t (bfs (append (cdr tree) (car tree))))  ;construct list with the list and then the first element of the list otherwise
+  )
+)
+;return single top level list of terminal nodes left-to-right breadth first search
