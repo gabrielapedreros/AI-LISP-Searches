@@ -1,4 +1,4 @@
-# Tree Searches Problem
+# Tree Search Problems
 Implement several brute-force search algorithms. All programs must work for tree of arbitrary depth and branching factors. The search tree will be represented as lists where:
  -leaf node represents an atom
  -non-leaf node represents list of child nodes
